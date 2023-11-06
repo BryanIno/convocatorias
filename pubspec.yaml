@@ -41,6 +41,9 @@ dependencies:
   google_fonts: ^6.1.0
   http: ^1.1.0
   dio: ^5.3.3
+  flutter_form_builder: ^9.1.1
+  validate_rut: ^0.2.2
+  cached_network_image: ^3.3.0
 
 dev_dependencies:
   flutter_test:
@@ -66,6 +69,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/img/
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
