@@ -1,4 +1,5 @@
 // ignore_for_file: use_build_context_synchronously
+import 'package:catalogo_app/main.dart';
 import 'package:catalogo_app/presentation/widgets/alerta.dart';
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
@@ -86,6 +87,25 @@ class FormularioView extends StatelessWidget {
         Scaffold(
           appBar: AppBar(
             title: const Text('Formulario de Postulación'),
+            actions: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const MyApp()),
+                    );
+                  },
+                  child: const Row(
+                    children: [
+                      Icon(Icons.home),
+                      Text('Volver a Convocatorias')
+                    ],
+                  ),
+                ),
+              )
+            ],
           ),
           //fondo
           body: Container(
@@ -114,6 +134,7 @@ class FormularioView extends StatelessWidget {
                     ),
                     borderRadius: BorderRadius.circular(20.0),
                   ),
+                  //formulario
                   child: Form(
                     key: _formKey,
                     child: Padding(
@@ -193,8 +214,7 @@ class FormularioView extends StatelessWidget {
                           Text(
                             errorMessage,
                             style: const TextStyle(
-                              color: Colors
-                                  .red, // Puedes elegir un color que te parezca adecuado
+                              color: Colors.red,
                             ),
                           ),
                           ElevatedButton(
